@@ -8,6 +8,10 @@
    PATH="/welcome.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="submit::#login.xhtml" NAME="output"
     PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="submit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="false::false.xhtml" NAME="output1"
+    PATH="false.xhtml" TARGET="rules:false.xhtml" TITLE="false" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:false.xhtml" PATH="false.xhtml"
+  SHAPE="464,17,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

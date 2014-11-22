@@ -3,6 +3,7 @@
 	<name>JobEye-JEE</name>
 	<comment></comment>
 	<projects>
+		<project>Example-EJB-Session-Entity</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
