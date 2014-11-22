@@ -488,7 +488,7 @@ var parallelism = (function($) { var _ = {
 						
 						}
 
-				// Poptrox.
+				/* Poptrox.
 					_.objects.reel.poptrox({
 						onPopupClose: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.removeClass('overlayed'); }) : null),
 						onPopupOpen: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.addClass('overlayed'); }) : null),
@@ -501,7 +501,7 @@ var parallelism = (function($) { var _ = {
 						usePopupCloser: false,
 						usePopupDefaultStyling: false,
 						usePopupNav: true
-					});
+					});*/
 
 				// Trigger resize event.
 					_.objects.window.trigger('resize');	
