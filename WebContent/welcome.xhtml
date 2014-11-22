@@ -7,14 +7,32 @@
     xmlns:f="http://java.sun.com/jsf/core">
 
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
-    <ui:define name="content">
-    	<h:form>
-                <h:outputText value="Rohit welcomes you"></h:outputText><br></br><br></br><br></br>
-                <h:outputText value="Please enter your name: "></h:outputText>
-                <h:inputText value="#{userBean.name}"></h:inputText><br></br>
-                <h:commandButton value="Submit" action="#{userBean.submit}"></h:commandButton>
-        		<br></br><br></br>
-        </h:form>
+    <ui:define name="main">
+			<div id="main">
+				<div id="reel">
+
+					<!-- Header Item -->
+					
+						<div id="header" class="item" data-width="400">
+							<div class="inner">
+								<h1>JobEye</h1>
+								<p>Managing Job Applications made easier</p>
+							</div>
+						</div>
+					
+					<!-- Thumb Items -->
+
+						<article class="item thumb" data-width="282">
+							<h2>Login</h2>
+							<a href="images/fulls/01.jpg"><img src="images/thumbs/01.jpg" alt=""></img></a>
+						</article>
+						
+						<article class="item thumb" data-width="384">
+							<h2>Sign Up</h2>
+							<a href="images/fulls/02.jpg"><img src="images/thumbs/02.jpg" alt=""></img></a>
+						</article>
+					</div>
+			</div>
     </ui:define>
 </ui:composition>
 </html>
