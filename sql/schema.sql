@@ -8,7 +8,7 @@ drop table Company;
 drop table Activity;
 drop table Application;
 
-create table User(userId integer, name varchar(50), birthdate datetime, emailId varchar(50), phone varchar(20));
+create table User(userId integer, name varchar(50), emailId varchar(50), phone varchar(20)); //Removed Bday
 create table Task(taskId integer, timestamp datetime, description varchar(50), stageId integer, isStageDependent bit);
 create table Stage(stageId integer, description varchar(50), stageType integer, applicationId integer);
 create table Profile(profileId integer, profileType integer, userId integer);

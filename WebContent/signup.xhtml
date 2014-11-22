@@ -13,16 +13,18 @@
 				<!-- Header Item -->
 				<div id="header" class="item" data-width="400">
 					<div class="inner">
-						<h1>Login</h1><br/>
+						<h1>Sign Up</h1><br/>
 						<h:form>
 							<h:panelGrid columns="2">
-								<h:outputText value="Login Id"></h:outputText>
+								<h:outputText value="Name"></h:outputText>
 								<h:inputText></h:inputText>
-								<h:outputText value="Password"></h:outputText>
+								<h:outputText value="Email"></h:outputText>
+								<h:inputSecret></h:inputSecret>
+								<h:outputText value="Phone"></h:outputText>
 								<h:inputSecret></h:inputSecret>
 							</h:panelGrid>
-							<h:commandButton value="Login"></h:commandButton>
-							<h:commandButton value="Sign Up" action="signup"></h:commandButton>
+							<h:commandButton value="Create Account"></h:commandButton>
+							<h:commandButton value="Login" action="login"></h:commandButton>
 						</h:form>
 					</div>
 				</div>
