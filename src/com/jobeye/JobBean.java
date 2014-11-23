@@ -17,7 +17,7 @@ public class JobBean
 	public void setJobId(long jobId) 
 	{	this.jobId = jobId;	}
 
-	public long getCompanyId() {
+	public int getCompanyId() {
 		return companyId;
 	}
 
@@ -44,11 +44,11 @@ public class JobBean
 
 	@EJB
 	//private jobsession userAdd;
-	com.jobeye.EJB.Service.JobSession jobSession;
+	JobSession jobSession;
 	
 	public String AddJob()
 	{
-String ret = jobSession.AddJob(companyId, location, position);
+		String ret = jobSession.AddJob(companyId, location, position);
 		if(ret.equalsIgnoreCase("Exists")){
 			return "false";
 		}

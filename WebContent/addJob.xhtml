@@ -13,16 +13,17 @@
 				<!-- Header Item -->
 				<div id="header" class="item" data-width="400">
 					<div class="inner">
-						<h1>Login</h1>
+						<h1>Login</h1><br/>
 						<h:form>
 							<h:panelGrid columns="2">
-								<h:outputText value="Company ID"></h:outputText>
-								<h:inputText value=""></h:inputText>
-								<h:outputText value="Password"></h:outputText>
-								<h:inputSecret value=""></h:inputSecret>
+								<h:outputText value="Company Id"></h:outputText>
+								<h:inputText value="#{jobBean.companyId}"></h:inputText>
+								<h:outputText value="Location"></h:outputText>
+								<h:inputText value="#{jobBean.location}" />
+								<h:outputText value="Position"></h:outputText>
+								<h:inputText value="#{jobBean.position}" />
 							</h:panelGrid>
-							<h:commandButton value="Login"></h:commandButton>
-							<h:commandButton value="Sign Up"></h:commandButton>
+							<h:commandButton value="Add Job" action="#{jobBean.AddJob()}"></h:commandButton>
 						</h:form>
 					</div>
 				</div>
