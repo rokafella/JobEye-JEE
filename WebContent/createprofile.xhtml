@@ -11,18 +11,17 @@
 		<div id="main">
 			<div id="reel">
 				<!-- Header Item -->
-				<div id="header" class="item" data-width="400">
-					<div class="inner">
-						<h1>Login</h1><br/>
-						<h:form>
+				<div id="header" class="item" data-width="600">
+					<div class="inner" style="margin-top:-10px;">
+						<h1>Welcome <h:outputText value="#{loginBean.name}"/></h1>
+						<p>Please create a new profile to continue:</p>
+						<h:form style="padding:3px;">
 							<h:panelGrid columns="2">
-								<h:outputText value="Email"></h:outputText>
-								<h:inputText value="#{loginBean.email}" style="margin-left:10px;"></h:inputText>
-								<h:outputText value="Password"></h:outputText>
-								<h:inputSecret value="#{loginBean.password}" style="margin-left:10px;"></h:inputSecret>
+								<h:outputText value="Profile"></h:outputText>
+								<h:inputText value="#{profileBean.type}" style="margin-left:10px;"></h:inputText>
 							</h:panelGrid>
-							<h:commandButton value="Login" action="#{loginBean.validate()}"></h:commandButton>
-							<h:commandButton value="Sign Up" action="signup" style="margin-left:10px;"></h:commandButton>
+							<p style="font-size: 0.9em;">Profile can be Internship, Part-Time, Full-time, or a custom name.</p>
+							<h:commandButton value="Create Profile" action="#{profileBean.setProfile()}"></h:commandButton>
 						</h:form>
 					</div>
 				</div>

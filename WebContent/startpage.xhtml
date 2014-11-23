@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="main">
+			<div id="main">
+				<div id="reel">
+
+					<!-- Header Item -->
+					
+						<div id="header" class="item" data-width="400">
+							<div class="inner" style="margin-top:-10px;">
+								<h1>Welcome <h:outputText value="#{loginBean.name}"/></h1>
+								<p>The current profile is <h:outputText value="#{profileBean.type}"/></p>
+							</div>
+						</div>
+					
+					<!-- Thumb Items -->
+
+						<article class="item thumb" data-width="382">
+							<h2>Add Job</h2>
+							<a ><img src="images/thumbs/01.jpg" alt=""></img></a>
+						</article>
+						
+						<article class="item thumb" data-width="384">
+							<h2>View Task</h2>
+							<a ><img src="images/thumbs/02.jpg" alt=""></img></a>
+						</article>
+						
+						<article class="item thumb" data-width="374">
+							<h2>Track Application</h2>
+							<a ><img src="images/thumbs/03.jpg" alt=""></img></a>
+						</article>
+						
+						<article class="item thumb" data-width="476">
+							<h2>Track Company Activity</h2>
+							<a ><img src="images/thumbs/06.jpg" alt=""></img></a>
+						</article>
+						
+						<article class="item thumb" data-width="476">
+							<h2>Edit Profile</h2>
+							<a ><img src="images/thumbs/05.jpg" alt=""></img></a>
+						</article>
+						
+						<article class="item thumb" data-width="476">
+							<h2>Logout</h2>
+							<a ><img src="images/thumbs/08.jpg" alt=""></img></a>
+						</article>
+						
+					</div>
+			</div>
+    </ui:define>
+</ui:composition>
+</html>

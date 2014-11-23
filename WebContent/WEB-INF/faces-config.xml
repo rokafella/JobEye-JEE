@@ -1,33 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<faces-config
-    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
-    version="2.2">
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
 
-<managed-bean>
-  <managed-bean-name>userBean</managed-bean-name>
-  <managed-bean-class>com.jobeye.UserBean</managed-bean-class>
-  <managed-bean-scope>application</managed-bean-scope>
-</managed-bean>
+	<managed-bean>
+		<managed-bean-name>userBean</managed-bean-name>
+		<managed-bean-class>com.jobeye.UserBean</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>loginBean</managed-bean-name>
+		<managed-bean-class>com.jobeye.LoginBean</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>profileBean</managed-bean-name>
+		<managed-bean-class>com.jobeye.ProfileBean</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+		<managed-property>
+			<property-name>loginBean</property-name>
+			<property-class>com.jobeye.LoginBean</property-class>
+			<value>#{loginBean}</value>
+		</managed-property>
+	</managed-bean>
 
 
-<navigation-rule>
-  <display-name>login.xhtml</display-name>
-  <from-view-id>/login.xhtml</from-view-id>
-  <navigation-case>
-	       <from-outcome>signup</from-outcome>
-      <to-view-id>/signup.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- 
- <navigation-rule>
-  <display-name>signup.xhtml</display-name>
-  <from-view-id>/signup.xhtml</from-view-id>
-  <navigation-case>
-	       <from-outcome>login</from-outcome>
-      <to-view-id>/login.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- 
- </faces-config>
+	<navigation-rule>
+		<display-name>login.xhtml</display-name>
+		<from-view-id>/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>true</from-outcome>
+			<to-view-id>/createprofile.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>false</from-outcome>
+			<to-view-id>/signup.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>signup</from-outcome>
+			<to-view-id>/signup.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>signup.xhtml</display-name>
+		<from-view-id>/signup.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/login.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>false</from-outcome>
+			<to-view-id>/signup.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>createprofile.xhtml</display-name>
+		<from-view-id>/createprofile.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>true</from-outcome>
+			<to-view-id>/startpage.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>false</from-outcome>
+			<to-view-id>/createprofile.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>

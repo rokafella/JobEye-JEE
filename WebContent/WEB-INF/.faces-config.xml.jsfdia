@@ -4,16 +4,36 @@
   SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#login.xhtml:0" NAME="item"
    PATH="/login.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="signup::#signup.xhtml" NAME="output"
+   <PROCESS-ITEM-OUTPUT ID="true::#createprofile.xhtml" NAME="output"
+    PATH="/createprofile.xhtml" TARGET="rules:#createprofile.xhtml"
+    TITLE="true" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="false::#signup.xhtml" NAME="output1"
+    PATH="/signup.xhtml" TARGET="rules:#signup.xhtml" TITLE="false" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="signup::#signup.xhtml" NAME="output2"
     PATH="/signup.xhtml" TARGET="rules:#signup.xhtml" TITLE="signup" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#signup.xhtml" PATH="/signup.xhtml"
-  SHAPE="240,33,0,0" model-entity="JSFProcessGroup">
+  SHAPE="232,32,50,57" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#signup.xhtml:0" NAME="item"
    PATH="/signup.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="login::#login.xhtml" NAME="output"
     PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="login" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="false::#signup.xhtml" NAME="output1"
+    PATH="/signup.xhtml" TARGET="rules:#signup.xhtml" TITLE="false" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#createprofile.xhtml"
+  PATH="/createprofile.xhtml" SHAPE="272,209,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#createprofile.xhtml:0" NAME="item"
+   PATH="/createprofile.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="true::#startpage.xhtml" NAME="output"
+    PATH="/startpage.xhtml" TARGET="rules:#startpage.xhtml" TITLE="true" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="false::#createprofile.xhtml" NAME="output1"
+    PATH="/createprofile.xhtml" TARGET="rules:#createprofile.xhtml"
+    TITLE="false" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#startpage.xhtml" PATH="/startpage.xhtml"
+  SHAPE="496,193,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

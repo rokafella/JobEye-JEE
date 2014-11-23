@@ -12,19 +12,21 @@
 			<div id="reel">
 				<!-- Header Item -->
 				<div id="header" class="item" data-width="400">
-					<div class="inner">
+					<div class="inner" style="margin-top:-30px;">
 						<h1>Sign Up</h1><br/>
-						<h:form>
+						<h:form style="padding:3px;">
 							<h:panelGrid columns="2">
 								<h:outputText value="Name"></h:outputText>
-								<h:inputText></h:inputText>
+								<h:inputText value="#{userBean.name}" style="margin-left:10px;"></h:inputText>
 								<h:outputText value="Email"></h:outputText>
-								<h:inputSecret></h:inputSecret>
+								<h:inputText value="#{userBean.email}" style="margin-left:10px;"></h:inputText>
+								<h:outputText value="Password"></h:outputText>
+								<h:inputSecret value="#{userBean.password}" style="margin-left:10px;"></h:inputSecret>
 								<h:outputText value="Phone"></h:outputText>
-								<h:inputSecret></h:inputSecret>
+								<h:inputText value="#{userBean.phone}" style="margin-left:10px;"></h:inputText>
 							</h:panelGrid>
-							<h:commandButton value="Create Account"></h:commandButton>
-							<h:commandButton value="Login" action="login"></h:commandButton>
+							<h:commandButton value="Create Account" action="#{userBean.submit()}"></h:commandButton>
+							<h:commandButton value="Login" action="login" style="margin-left:10px;"></h:commandButton>
 						</h:form>
 					</div>
 				</div>
