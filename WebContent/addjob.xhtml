@@ -11,17 +11,20 @@
 		<div id="main">
 			<div id="reel">
 				<!-- Header Item -->
-				<div id="header" class="item" data-width="400">
+				<div id="header" class="item" data-width="600">
 					<div class="inner" style="margin-top:-30px;">
 						<h1>Add Job</h1><br/>
 						<h:form>
-							<h:panelGrid columns="2">
+							<h:panelGrid columns="3">
 								<h:outputText value="Company Id"></h:outputText>
-								<h:inputText value="#{jobBean.companyId}"></h:inputText>
+								<h:inputText value="#{jobBean.companyId}" required="true" id="companyid" requiredMessage="Company is required"></h:inputText>
+								<h:message for="companyid" />
 								<h:outputText value="Location"></h:outputText>
-								<h:inputText value="#{jobBean.location}" />
+								<h:inputText value="#{jobBean.location}" id="location" />
+								<h:message for="location" />
 								<h:outputText value="Position"></h:outputText>
-								<h:inputText value="#{jobBean.position}" />
+								<h:inputText value="#{jobBean.position}" required="true" id="position" requiredMessage="position is required" />
+								<h:message for="position" />
 							</h:panelGrid>
 							<h:commandButton value="Add Job" action="#{jobBean.AddJob()}"></h:commandButton>
 						</h:form>
