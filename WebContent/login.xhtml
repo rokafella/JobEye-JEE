@@ -11,18 +11,20 @@
 		<div id="main">
 			<div id="reel">
 				<!-- Header Item -->
-				<div id="header" class="item" data-width="400">
+				<div id="header" class="item" data-width="500">
 					<div class="inner">
 						<h1>Login</h1><br/>
 						<h:form>
-							<h:panelGrid columns="2">
+							<h:panelGrid columns="3">
 								<h:outputText value="Email"></h:outputText>
-								<h:inputText value="#{loginBean.email}" style="margin-left:10px;"></h:inputText>
+								<h:inputText value="#{loginBean.email}" binding="#{loginBean.mybutton}" id="useremailinput" style="margin-left:10px;margin-right:20px;" required="true" requiredMessage="Email cannot be blank" validatorMessage="Invalid email format"><f:validateRegex  pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" /></h:inputText>
+								<h:message for="useremailinput" />
 								<h:outputText value="Password"></h:outputText>
-								<h:inputSecret value="#{loginBean.password}" style="margin-left:10px;"></h:inputSecret>
+								<h:inputSecret value="#{loginBean.password}" id="userpassinput" style="margin-left:10px; margin-bottom:10px;margin-right:20px;" required="true" requiredMessage="Password cannot be blank"></h:inputSecret>
+								<h:message for="userpassinput" />
 							</h:panelGrid>
-							<h:commandButton value="Login" action="#{loginBean.validate()}"></h:commandButton>
-							<h:commandButton value="Sign Up" action="signup" style="margin-left:10px;"></h:commandButton>
+							<h:commandButton value="Login" class="fa" action="#{loginBean.validate()}"></h:commandButton>
+							<a href="signup.xhtml" style="padding: 10px; color: black"><i class="fa fa-pencil"></i>Sign Up</a>
 						</h:form>
 					</div>
 				</div>

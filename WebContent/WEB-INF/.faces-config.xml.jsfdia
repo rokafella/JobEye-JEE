@@ -7,8 +7,8 @@
    <PROCESS-ITEM-OUTPUT ID="true::#createprofile.xhtml" NAME="output"
     PATH="/createprofile.xhtml" TARGET="rules:#createprofile.xhtml"
     TITLE="true" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="false::#signup.xhtml" NAME="output1"
-    PATH="/signup.xhtml" TARGET="rules:#signup.xhtml" TITLE="false" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="false::#login.xhtml" NAME="output1"
+    PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="false" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT ID="signup::#signup.xhtml" NAME="output2"
     PATH="/signup.xhtml" TARGET="rules:#signup.xhtml" TITLE="signup" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
