@@ -11,6 +11,12 @@
 	</managed-bean>
 
 	<managed-bean>
+		<managed-bean-name>jobBean</managed-bean-name>
+		<managed-bean-class>com.jobeye.JobBean</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
 		<managed-bean-name>loginBean</managed-bean-name>
 		<managed-bean-class>com.jobeye.LoginBean</managed-bean-class>
 		<managed-bean-scope>application</managed-bean-scope>
@@ -57,7 +63,7 @@
 			<to-view-id>/signup.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<display-name>createprofile.xhtml</display-name>
 		<from-view-id>/createprofile.xhtml</from-view-id>
