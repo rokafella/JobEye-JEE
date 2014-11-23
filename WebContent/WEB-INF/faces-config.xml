@@ -10,6 +10,11 @@
   <managed-bean-class>com.jobeye.UserBean</managed-bean-class>
   <managed-bean-scope>application</managed-bean-scope>
 </managed-bean>
+<managed-bean>
+  <managed-bean-name>jobBean</managed-bean-name>
+  <managed-bean-class>com.jobeye.JobBean</managed-bean-class>
+  <managed-bean-scope>application</managed-bean-scope>
+</managed-bean>
 
 
 <navigation-rule>
