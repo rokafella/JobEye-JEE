@@ -11,22 +11,25 @@
 		<div id="main">
 			<div id="reel">
 				<!-- Header Item -->
-				<div id="header" class="item" data-width="400">
+				<div id="header" class="item" data-width="550">
 					<div class="inner" style="margin-top:-30px;">
 						<h1>Sign Up</h1><br/>
-						<h:form style="padding:3px;">
-							<h:panelGrid columns="2">
-								<h:outputText value="Name"></h:outputText>
-								<h:inputText value="#{userBean.name}" style="margin-left:10px;"></h:inputText>
+						<h:form style="padding:3px;margin-top:-10px;" id="myform">
+							<h:panelGrid columns="3">
+								<h:outputText value="Name"></h:outputText> 
+								<h:inputText value="#{userBean.name}" id="nameinput" style="margin-left:10px;margin-right:20px;" required="true" requiredMessage="Name cannot be blank"></h:inputText>
+								<h:message for="nameinput" />
 								<h:outputText value="Email"></h:outputText>
-								<h:inputText value="#{userBean.email}" style="margin-left:10px;"></h:inputText>
+								<h:inputText value="#{userBean.email}" binding="#{userBean.mybutton}" id="emailinput" style="margin-left:10px;margin-right:20px;" required="true" requiredMessage="Email cannot be blank" validatorMessage="Invalid email format"><f:validateRegex  pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" /></h:inputText>
+								<h:message for="emailinput" />
 								<h:outputText value="Password"></h:outputText>
-								<h:inputSecret value="#{userBean.password}" style="margin-left:10px;"></h:inputSecret>
+								<h:inputSecret value="#{userBean.password}" id="passinput" style="margin-left:10px;margin-right:20px;" required="true" requiredMessage="Password cannot be blank"></h:inputSecret>
+								<h:message for="passinput" />
 								<h:outputText value="Phone"></h:outputText>
-								<h:inputText value="#{userBean.phone}" style="margin-left:10px;"></h:inputText>
+								<h:inputText value="#{userBean.phone}" style="margin-left:10px;margin-right:20px;" ></h:inputText>
 							</h:panelGrid>
-							<h:commandButton value="Create Account" action="#{userBean.submit()}"></h:commandButton>
-							<h:commandButton value="Login" action="login" style="margin-left:10px;"></h:commandButton>
+							<h:commandButton class="fa" value="Create Account" action="#{userBean.submit()}"></h:commandButton>
+							<a href="login.xhtml" style="padding: 10px; color: black"><i class="fa fa-sign-in"></i>Back to Login</a>
 						</h:form>
 					</div>
 				</div>
