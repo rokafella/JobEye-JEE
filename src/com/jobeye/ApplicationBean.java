@@ -29,20 +29,20 @@ public class ApplicationBean
 		this.companyName = companyName;
 	}
 
-	public String getJobTitle() {
-		return jobTitle;
-	}
-
-	public void setJobTitle(String jobTitle) {
-		this.jobTitle = jobTitle;
-	}
-
 	public String getLocation() {
 		return location;
 	}
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
 	}
 
 	public String getStatus() {
@@ -52,26 +52,45 @@ public class ApplicationBean
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+	public ProfileBean getProfileBean() {
+		return profileBean;
+	}
+
+	public void setProfileBean(ProfileBean profileBean) {
+		this.profileBean = profileBean;
+	}
 
 	private String companyName;
-	private String jobTitle;
 	private String location;
+	private String position;
 	private String status;
 	
 	private LoginBean loginBean;
+	private ProfileBean profileBean;
+
+	@EJB
+	private ApplicationSession appSession;
+
+	@EJB
+	private CompanySession companySession; 
+
+	@EJB
+	private JobSession jobSession; 
 	
 	
 	public String addApplication()
 	{
-//		Integer companyId = companySession.AddCompany(companyName, "", loginBean.getUserId());
-//		if(companyId == null)){
-//			return "false";
-//		}
-//		Integer retJob = jobSession.AddJob(companyId, , position)
-//		String ret = appSession.AddApplication(jobId, profileId, status);
-//		if(ret.equalsIgnoreCase("Exists")){
-//			return "false";
-//		}
+		int companyId = companySession.AddCompany(companyName, "", loginBean.getUserId());
+		if(companyId == -1)
+		{
+			return "false";
+		}
+		int jobId = jobSession.AddJob(companyId, location, position);
+		String ret = appSession.AddApplication(jobId, profileBean.getProfileId(), status);
+		if(ret.equalsIgnoreCase("Exists")){
+			return "false";
+		}
 		return "submit";
 	}
 }

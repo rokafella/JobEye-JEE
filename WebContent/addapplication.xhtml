@@ -17,11 +17,14 @@
 						<h:form>
 							<h:panelGrid columns="3">
 								<h:outputText value="Company : "></h:outputText>
-								<h:inputText value="#{applicationBean.company}" required="true" id="jobid" requiredMessage="job is required"></h:inputText>
-								<h:message for="jobid" />
-							<h:outputText value="Profile id"></h:outputText>
-								<h:inputText value="#{applicationBean.profileId}" id="profile" required="true" />
-								<h:message for="profile" />
+								<h:inputText value="#{applicationBean.companyName}" required="true" id="company" requiredMessage="company is required"></h:inputText>
+								<h:message for="company" />
+								<h:outputText value="Location : "></h:outputText>
+								<h:inputText value="#{applicationBean.location}" required="true" id="location" requiredMessage="location is required"></h:inputText>
+								<h:message for="jobtitle" />
+								<h:outputText value="Position : "></h:outputText>
+								<h:inputText value="#{applicationBean.position}" required="true" id="position" requiredMessage="position is required"></h:inputText>
+								<h:message for="position" />
 								<h:outputText value="Status"></h:outputText>
 								<h:inputText value="#{applicationBean.status}" required="true" id="status" requiredMessage="status is required" />
 								<h:message for="status" />
