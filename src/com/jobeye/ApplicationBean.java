@@ -45,6 +45,14 @@ public class ApplicationBean
 		this.location = location;
 	}
 
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
 	public String getStatus() {
 		return status;
 	}
@@ -56,6 +64,7 @@ public class ApplicationBean
 	private String companyName;
 	private String jobTitle;
 	private String location;
+	private String position;
 	private String status;
 	
 	private LoginBean loginBean;
@@ -72,15 +81,16 @@ public class ApplicationBean
 	
 	public String addApplication()
 	{
-//		Integer companyId = companySession.AddCompany(companyName, "", loginBean.getUserId());
-//		if(companyId == null)){
-//			return "false";
-//		}
-//		Integer retJob = jobSession.AddJob(companyId, , position)
-//		String ret = appSession.AddApplication(jobId, profileId, status);
-//		if(ret.equalsIgnoreCase("Exists")){
-//			return "false";
-//		}
+		int companyId = companySession.AddCompany(companyName, "", loginBean.getUserId());
+		if(companyId == -1)
+		{
+			return "false";
+		}
+		int retJob = jobSession.AddJob(companyId,location, position);
+		String ret = appSession.AddApplication(jobId, profileId, status);
+		if(ret.equalsIgnoreCase("Exists")){
+			return "false";
+		}
 		return "submit";
 	}
 }
