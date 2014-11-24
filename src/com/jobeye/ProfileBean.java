@@ -19,6 +19,8 @@ public class ProfileBean {
 		this.type = type;
 	}
 	
+	private String newType;
+	
 	private LoginBean loginBean;
 	
 	public LoginBean getLoginBean() {
@@ -49,15 +51,29 @@ public class ProfileBean {
 	}
 	
 	public String createProfile(){
-		return profileAdd.addProfile(type,loginBean.getUserId());
+		return profileAdd.addProfile(newType,loginBean.getUserId());
 	}
 	
 	public String selectProfile(){
-		if(this.type!=null){
-			return "success";
-		}
-		else{
-			return "false";
-		}
+		setProfileId(profileAdd.getProfileIdFromDb(type));
+		return "success";
 	}
+
+	public String getNewType() {
+		return newType;
+	}
+
+	public void setNewType(String newType) {
+		this.newType = newType;
+	}
+	
+	public int getProfileId() {
+		return profileId;
+	}
+
+	public void setProfileId(int profileId) {
+		this.profileId = profileId;
+	}
+
+	private int profileId;
 }
