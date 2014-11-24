@@ -21,10 +21,13 @@
 								<h:message for="company" />
 								<h:outputText value="Location : "></h:outputText>
 								<h:inputText value="#{applicationBean.location}" required="true" id="location" requiredMessage="location is required"></h:inputText>
-								<h:message for="jobtitle" />
+								<h:message for="location" />
 								<h:outputText value="Position : "></h:outputText>
 								<h:inputText value="#{applicationBean.position}" required="true" id="position" requiredMessage="position is required"></h:inputText>
 								<h:message for="position" />
+								<h:outputText value="Stage"></h:outputText>
+								<h:inputText value="#{applicationBean.stage}" required="true" id="stage" requiredMessage="stage is required" />
+								<h:message for="stage" />
 								<h:outputText value="Status"></h:outputText>
 								<h:inputText value="#{applicationBean.status}" required="true" id="status" requiredMessage="status is required" />
 								<h:message for="status" />
