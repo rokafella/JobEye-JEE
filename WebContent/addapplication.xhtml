@@ -16,10 +16,10 @@
 						<h1>Add Application</h1><br/>
 						<h:form>
 							<h:panelGrid columns="3">
-								<h:outputText value="Job Id"></h:outputText>
-								<h:inputText value="#{applicationBean.jobId}" required="true" id="jobid" requiredMessage="job is required"></h:inputText>
+								<h:outputText value="Company : "></h:outputText>
+								<h:inputText value="#{applicationBean.company}" required="true" id="jobid" requiredMessage="job is required"></h:inputText>
 								<h:message for="jobid" />
-								<h:outputText value="Profile id"></h:outputText>
+							<h:outputText value="Profile id"></h:outputText>
 								<h:inputText value="#{applicationBean.profileId}" id="profile" required="true" />
 								<h:message for="profile" />
 								<h:outputText value="Status"></h:outputText>
