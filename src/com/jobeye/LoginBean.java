@@ -51,7 +51,12 @@ public class LoginBean {
 				return "false";
 			}
 			this.name = ret;
+			setUserIdfromDb(email);
 			return "true";
+		}
+
+		private void setUserIdfromDb(String email) {
+			setUserId(loginSession.getTheId(email));
 		}
 
 		public UIComponent getMybutton() {
@@ -61,4 +66,14 @@ public class LoginBean {
 		public void setMybutton(UIComponent mybutton) {
 			this.mybutton = mybutton;
 		}
+		
+		public int getUserId() {
+			return userId;
+		}
+
+		public void setUserId(int userId) {
+			this.userId = userId;
+		}
+
+		private int userId;
 }

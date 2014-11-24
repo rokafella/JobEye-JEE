@@ -12,16 +12,19 @@
 			<div id="reel">
 				<!-- Header Item -->
 				<div id="header" class="item" data-width="600">
-					<div class="inner" style="margin-top:-30px;">
+					<div class="inner" style="margin-top:-20px;">
 						<h1>Welcome <h:outputText value="#{loginBean.name}"/></h1>
-						<p>Please create a new profile to continue:</p>
-						<h:form style="padding:3px;">
-							<h:panelGrid columns="2">
-								<h:outputText value="Profile"></h:outputText>
+						<p>Please select a profile or create a new profile to continue:</p>
+						<h:form style="padding:3px; margin-top:10px;">
+							<h:panelGrid columns="5">
+								<h:outputText value="Select"></h:outputText>
+								<h:selectOneMenu style="margin-left:10px;margin-right:10px;"><f:selectItems value="#{profileBean.typesOptions}"/></h:selectOneMenu>
+								<h:outputText value="Or Create a new "></h:outputText>
 								<h:inputText value="#{profileBean.type}" style="margin-left:10px;"></h:inputText>
+								<h:commandButton value="Create Profile" style="margin-left:10px;" class="fa" action="#{profileBean.setProfile()}"></h:commandButton>
 							</h:panelGrid>
 							<p style="font-size: 0.9em;">Profile can be Internship, Part-Time, Full-time, or a custom name.</p>
-							<h:commandButton value="Create Profile" action="#{profileBean.setProfile()}"></h:commandButton>
+							<h:commandButton value="Select Profile" style="margin-top:15px;" class="fa"></h:commandButton>
 						</h:form>
 					</div>
 				</div>
