@@ -47,8 +47,8 @@ public class JobBean
 	
 	public String AddJob()
 	{
-		String ret = jobSession.AddJob(companyId, location, position);
-		if(ret.equalsIgnoreCase("Exists")){
+		int ret = jobSession.AddJob(companyId, location, position);
+		if(ret == -1){
 			return "false";
 		}
 		return "submit";

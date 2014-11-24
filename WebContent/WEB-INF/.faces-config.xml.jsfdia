@@ -27,13 +27,17 @@
   PATH="/createprofile.xhtml" SHAPE="272,209,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#createprofile.xhtml:0" NAME="item"
    PATH="/createprofile.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="true::#startpage.xhtml" NAME="output"
-    PATH="/startpage.xhtml" TARGET="rules:#startpage.xhtml" TITLE="true" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="true::#createprofile.xhtml" NAME="output"
+    PATH="/createprofile.xhtml" TARGET="rules:#createprofile.xhtml"
+    TITLE="true" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT ID="false::#createprofile.xhtml" NAME="output1"
     PATH="/createprofile.xhtml" TARGET="rules:#createprofile.xhtml"
     TITLE="false" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="success::#startpage.xhtml" NAME="output2"
+    PATH="/startpage.xhtml" TARGET="rules:#startpage.xhtml"
+    TITLE="success" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#startpage.xhtml" PATH="/startpage.xhtml"
-  SHAPE="496,193,0,0" model-entity="JSFProcessGroup"/>
+  SHAPE="528,193,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>
