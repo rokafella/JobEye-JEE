@@ -38,9 +38,6 @@ public class ProfileBean {
 
 	public List<String> getTypesOptions() {
 		typesOptions = new ArrayList<String>();
-		typesOptions.add("Internship");
-		typesOptions.add("Full Time");
-		typesOptions.add("Part time");
 		List<String> result = profileAdd.oldProfileValues(loginBean.getUserId());
 		if(result!=null){
 			for(String s:result){
@@ -55,6 +52,9 @@ public class ProfileBean {
 	}
 	
 	public String selectProfile(){
+		if(type==null){
+			return "false";
+		}
 		setProfileId(profileAdd.getProfileIdFromDb(type));
 		return "success";
 	}
