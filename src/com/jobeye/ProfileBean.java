@@ -29,24 +29,6 @@ public class ProfileBean {
 		this.loginBean = loginBean;
 	}
 	
-	public static class types{
-		public String typeLabel;
-		public String typeValue;
-		
-		public types(String label, String value){
-			this.typeLabel = label;
-			this.typeValue = value;
-		}
-		
-		public String getTypeLabel() {
-			return typeLabel.toString();
-		}
-
-		public String getTypeValue() {
-			return typeValue.toString();
-		}
-	}
-	
 	@EJB
 	private ProfileAdd profileAdd;
 	
@@ -57,19 +39,25 @@ public class ProfileBean {
 		typesOptions.add("Internship");
 		typesOptions.add("Full Time");
 		typesOptions.add("Part time");
-		List<String> result = profileAdd.oldProfileValues(loginBean.getEmail());
+		List<String> result = profileAdd.oldProfileValues(loginBean.getUserId());
 		if(result!=null){
 			for(String s:result){
 				typesOptions.add(s);
 			}
 		}
-		else{
-			System.out.println("NULL NULL");
-		}
 		return typesOptions;
 	}
 	
-	public String setProfile(){
-		return profileAdd.addProfile(type,loginBean.getEmail());
+	public String createProfile(){
+		return profileAdd.addProfile(type,loginBean.getUserId());
+	}
+	
+	public String selectProfile(){
+		if(this.type!=null){
+			return "success";
+		}
+		else{
+			return "false";
+		}
 	}
 }
