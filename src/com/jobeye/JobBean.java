@@ -43,7 +43,6 @@ public class JobBean
 	
 
 	@EJB
-	//private jobsession userAdd;
 	JobSession jobSession;
 	
 	public String AddJob()
