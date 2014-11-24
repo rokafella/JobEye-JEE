@@ -44,14 +44,6 @@ public class ApplicationBean
 		this.position = position;
 	}
 
-	public String getstage() {
-		return stage;
-	}
-
-	public void setStage(String stage) {
-		this.stage = stage;
-	}
-	
 	public String getStatus() {
 		return status;
 	}
@@ -67,12 +59,22 @@ public class ApplicationBean
 	public void setProfileBean(ProfileBean profileBean) {
 		this.profileBean = profileBean;
 	}
+	
+	public int getApplicationId() {
+		return applicationId;
+	}
+
+	public void setApplicationId(int applicationId) {
+		this.applicationId = applicationId;
+	}
+
+
 
 	private String companyName;
 	private String location;
 	private String position;
-	private String stage;
 	private String status;
+	private int applicationId;
 	
 	private LoginBean loginBean;
 	private ProfileBean profileBean;
@@ -86,9 +88,6 @@ public class ApplicationBean
 	@EJB
 	private JobSession jobSession;
 	
-	@EJB
-	private StageSession stageSession; 
-	
 	public String addApplication()
 	{
 		int companyId = companySession.AddCompany(companyName, "", loginBean.getUserId());
@@ -98,10 +97,8 @@ public class ApplicationBean
 		if(jobId == -1)
 			return "false";
 		int applicationId = appSession.AddApplication(jobId, profileBean.getProfileId(), status);
+		setApplicationId(applicationId);
 		if(applicationId == -1)
-			return "false";
-		int stageId = stageSession.AddStage(stage, "", applicationId);
-		if(stageId == -1)
 			return "false";
 		
 		return "submit";

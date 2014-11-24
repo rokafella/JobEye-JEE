@@ -48,6 +48,23 @@
 			<value>#{profileBean}</value>
 		</managed-property>
 	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>taskBean</managed-bean-name>
+		<managed-bean-class>com.jobeye.TaskBean</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+		<managed-property>
+			<property-name>applicationBean</property-name>
+			<property-class>com.jobeye.ApplicationBean</property-class>
+			<value>#{applicationBean}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>activityBean</managed-bean-name>
+		<managed-bean-class>com.jobeye.ActivityBean</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
 
 	<navigation-rule>
 		<display-name>login.xhtml</display-name>

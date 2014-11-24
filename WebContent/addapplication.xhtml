@@ -11,7 +11,7 @@
 		<div id="main">
 			<div id="reel">
 				<!-- Header Item -->
-				<div id="header" class="item" data-width="600">
+				<div id="header" class="item" data-width="600" data-height = "500">
 					<div class="inner" style="margin-top:-30px;">
 						<h1>Add Application</h1><br/>
 						<h:form>
@@ -25,9 +25,6 @@
 								<h:outputText value="Position : "></h:outputText>
 								<h:inputText value="#{applicationBean.position}" required="true" id="position" requiredMessage="position is required"></h:inputText>
 								<h:message for="position" />
-								<h:outputText value="Stage"></h:outputText>
-								<h:inputText value="#{applicationBean.stage}" required="true" id="stage" requiredMessage="stage is required" />
-								<h:message for="stage" />
 								<h:outputText value="Status"></h:outputText>
 								<h:inputText value="#{applicationBean.status}" required="true" id="status" requiredMessage="status is required" />
 								<h:message for="status" />

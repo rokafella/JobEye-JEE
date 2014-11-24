@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="main">
+		<div id="main">
+			<div id="reel">
+				<!-- Header Item -->
+				<div id="header" class="item" data-width="600" data-height = "500">
+					<div class="inner" style="margin-top:-30px;">
+						<h1>Add Task</h1><br/>
+						<h:form>
+							<h:panelGrid columns="3">
+								<h:outputText value="Date : "></h:outputText>
+								<h:inputText value="#{taskBean.date}" required="true" id="date" requiredMessage="date is required">
+								<f:convertDateTime pattern="yyyy-MM-dd" /></h:inputText>
+								<h:message for="date" />
+								<h:outputText value="Description : "></h:outputText>
+								<h:inputText value="#{taskBean.description}" required="true" id="description" requiredMessage="description is required">
+								</h:inputText>
+								<h:message for="description" />
+							</h:panelGrid>
+							<h:commandButton value="Add Task" action="#{taskBean.addTask()}"></h:commandButton>
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
