@@ -59,12 +59,14 @@ public class UserBean {
 	private ProfileAdd profileAdd;
 	
 	public String submit(){
-		String ret = userAdd.UserAdd(name,email,phone,password);
-		if(ret.equalsIgnoreCase("Exists")){
+		int id = userAdd.UserAdd(name,email,phone,password);
+		if(id==-1){
 			FacesContext.getCurrentInstance().addMessage(mybutton.getClientId(FacesContext.getCurrentInstance()), new FacesMessage("User with this Email already exists!"));
 			return "false";
 		}
-		
+		profileAdd.addProfile("Internship",id);
+		profileAdd.addProfile("Full Time",id);
+		profileAdd.addProfile("Part Time",id);
 		return "login";
 	}
 
