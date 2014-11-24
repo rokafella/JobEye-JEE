@@ -68,15 +68,6 @@ public class ApplicationBean
 	private String status;
 	
 	private LoginBean loginBean;
-
-	@EJB
-	ApplicationSession appSession;
-
-	@EJB
-	CompanySession companySession; 
-
-	@EJB
-	JobSession jobSession; 
 	
 	
 	public String addApplication()
