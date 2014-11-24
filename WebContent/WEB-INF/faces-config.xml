@@ -37,6 +37,16 @@
 		<managed-bean-name>applicationBean</managed-bean-name>
 		<managed-bean-class>com.jobeye.ApplicationBean</managed-bean-class>
 		<managed-bean-scope>application</managed-bean-scope>
+		<managed-property>
+			<property-name>loginBean</property-name>
+			<property-class>com.jobeye.LoginBean</property-class>
+			<value>#{loginBean}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>profileBean</property-name>
+			<property-class>com.jobeye.ProfileBean</property-class>
+			<value>#{profileBean}</value>
+		</managed-property>
 	</managed-bean>
 
 	<navigation-rule>
