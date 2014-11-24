@@ -5,6 +5,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 
+import com.jobeye.EJB.Service.ProfileAdd;
 import com.jobeye.EJB.Service.UserAdd;
 
 public class UserBean {
@@ -54,12 +55,16 @@ public class UserBean {
 	@EJB
 	private UserAdd userAdd;
 	
+	@EJB
+	private ProfileAdd profileAdd;
+	
 	public String submit(){
 		String ret = userAdd.UserAdd(name,email,phone,password);
 		if(ret.equalsIgnoreCase("Exists")){
 			FacesContext.getCurrentInstance().addMessage(mybutton.getClientId(FacesContext.getCurrentInstance()), new FacesMessage("User with this Email already exists!"));
 			return "false";
 		}
+		
 		return "login";
 	}
 
