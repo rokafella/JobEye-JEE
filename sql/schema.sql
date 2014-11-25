@@ -16,3 +16,12 @@ create table Job(jobId integer, companyId integer, position varchar(50), Locatio
 create table Company(companyId integer, name varchar(50), headQuarters varchar(50), userId integer);
 create table Activity(activityId integer, description varchar(50), title varchar(50), date date, companyId integer);
 create table Application(applicationId integer, jobId integer, profileId integer, status varchar(50));
+
+select * from activity;
+select * from application;
+select * from company;
+select * from job;
+select * from profile;
+select * from stage;
+select * from task;
+select * from user;

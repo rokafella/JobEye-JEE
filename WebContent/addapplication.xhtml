@@ -11,25 +11,32 @@
 		<div id="main">
 			<div id="reel">
 				<!-- Header Item -->
-				<div id="header" class="item" data-width="600" data-height = "500">
+				<div id="header" class="item" data-width="800" data-height="1000">
 					<div class="inner" style="margin-top:-30px;">
 						<h1>Add Application</h1><br/>
 						<h:form>
-							<h:panelGrid columns="3">
-								<h:outputText value="Company : "></h:outputText>
-								<h:inputText value="#{applicationBean.companyName}" required="true" id="company" requiredMessage="company is required"></h:inputText>
-								<h:message for="company" />
-								<h:outputText value="Location : "></h:outputText>
-								<h:inputText value="#{applicationBean.location}" required="true" id="location" requiredMessage="location is required"></h:inputText>
-								<h:message for="location" />
-								<h:outputText value="Position : "></h:outputText>
-								<h:inputText value="#{applicationBean.position}" required="true" id="position" requiredMessage="position is required"></h:inputText>
-								<h:message for="position" />
+							<h:panelGrid columns="5">
+								<h:outputText value="Select Company"></h:outputText>
+								<h:selectOneMenu style="margin-left:10px;margin-right:30px;" value="#{applicationBean.selectedCompany}"><f:selectItems value="#{applicationBean.allCompanies}"/></h:selectOneMenu>
+								<h:outputText value="Or Add a new"></h:outputText>
+								<h:inputText value="#{applicationBean.companyName}" style="margin-left:10px;"></h:inputText>
+								<h:commandButton value="Add Company" class="fa" style="margin-left:10px;" action="#{applicationBean.addCompany()}"></h:commandButton>
+								<h:outputText value="Location*"></h:outputText>
+								<h:inputText value="#{applicationBean.location}" style="margin-left:10px;" required="true" id="location" requiredMessage="Location is required"></h:inputText>
+								<h:message for="location" style="margin-left:10px;"/>
+								<h:outputText value=" "></h:outputText>
+								<h:outputText value=" "></h:outputText>
+								<h:outputText value="Position*"></h:outputText>
+								<h:inputText value="#{applicationBean.position}" style="margin-left:10px;" required="true" id="position" requiredMessage="Position is required"></h:inputText>
+								<h:message for="position" style="margin-left:10px;" />
+								<h:outputText value=" "></h:outputText>
+								<h:outputText value=" "></h:outputText>
 								<h:outputText value="Status"></h:outputText>
-								<h:inputText value="#{applicationBean.status}" required="true" id="status" requiredMessage="status is required" />
-								<h:message for="status" />
+								<h:selectOneMenu style="margin-left:10px;margin-right:30px;" value="#{applicationBean.status}"><f:selectItem itemValue="Open" itemLabel="Open" />
+   								<f:selectItem itemValue="Closed" itemLabel="Closed" />
+   								</h:selectOneMenu>
 							</h:panelGrid>
-							<h:commandButton value="Add Application" action="#{applicationBean.addApplication()}"></h:commandButton>
+							<h:commandButton value="Add Application" class="fa" action="#{applicationBean.addApplication()}"></h:commandButton>
 						</h:form>
 					</div>
 				</div>

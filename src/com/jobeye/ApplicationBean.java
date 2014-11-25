@@ -1,16 +1,14 @@
 package com.jobeye;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.ejb.EJB;
 
 import com.jobeye.EJB.Service.*;
 
 public class ApplicationBean 
 {
-
-	public ApplicationBean() 
-	{
-		// TODO Auto-generated constructor stub
-	}
 
 	public LoginBean getLoginBean() {
 		return loginBean;
@@ -68,8 +66,6 @@ public class ApplicationBean
 		this.applicationId = applicationId;
 	}
 
-
-
 	private String companyName;
 	private String location;
 	private String position;
@@ -90,7 +86,7 @@ public class ApplicationBean
 	
 	public String addApplication()
 	{
-		int companyId = companySession.AddCompany(companyName, "", loginBean.getUserId());
+		int companyId = companySession.getCompany(selectedCompany,loginBean.getUserId());
 		if(companyId == -1)
 			return "false";
 		int jobId = jobSession.AddJob(companyId, location, position);
@@ -102,5 +98,85 @@ public class ApplicationBean
 			return "false";
 		
 		return "submit";
+	}
+	
+	public static List<String> allCompanies;
+
+	public List<String> getAllCompanies() {
+		allCompanies = new ArrayList<String>();
+		List<String> result = companySession.allCompanies(loginBean.getUserId());
+		if(result!=null){
+			for(String s:result){
+				allCompanies.add(s);
+			}
+		}
+		return allCompanies;
+	}
+	
+	public String addCompany(){
+		int res = companySession.AddCompany(companyName,loginBean.getUserId());
+		if(res==-1){
+			return "false";
+		}
+		else{
+			return "true";
+		}
+	}
+	
+	public String getSelectedCompany() {
+		return selectedCompany;
+	}
+
+	public void setSelectedCompany(String selectedCompany) {
+		this.selectedCompany = selectedCompany;
+	}
+
+	private String selectedCompany;
+	
+	List<List<String>> applications;
+
+	public List<List<String>> getApplications() {
+		
+		return applications;
+	}
+
+	public void setApplications(List<List<String>> applications) {
+		this.applications = applications;
+	}
+	
+	public String trackStatus;
+
+	public String getTrackStatus() {
+		return trackStatus;
+	}
+
+	public void setTrackStatus(String trackStatus) {
+		this.trackStatus = trackStatus;
+	}
+	
+	public String trackApplications(){
+		
+		List<Integer> jobIds = appSession.getAllApps(profileBean.getProfileId(),"Open");
+		
+		for(int jobid: jobIds){
+			//int companyID = jobSession.getCompanyId(jobid);
+//			String location = jobSession.getLocation(jobid);
+//			String position = jobSession.getPosition(jobid);
+//			String company = companySession.getName(companyID);
+			List<String> appli = jobSession.getApps(jobid);
+//			appli.add(company);
+//			appli.add(location);
+//			appli.add(position);
+			if(appli==null){
+				System.out.println("NONONONONON");
+			}
+			else{
+				applications.add(appli);
+				System.out.println("HHAAHAHAHA");
+			}
+			return "false";
+		}
+		
+		return "true";
 	}
 }
