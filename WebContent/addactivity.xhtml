@@ -29,7 +29,7 @@
 								</h:inputText>
 								<h:message for="title" />
 								<h:outputText value="Select Company"></h:outputText>
-								<h:selectOneMenu style="margin-left:10px;margin-right:30px;" value="#{applicationBean.selectedCompany}"><f:selectItems value="#{applicationBean.allCompanies}"/></h:selectOneMenu>
+								<h:selectOneMenu style="margin-left:10px;margin-right:30px;" value="#{activityBean.selectedCompany}"><f:selectItems value="#{applicationBean.allCompanies}"/></h:selectOneMenu>
 								<h:message for="title" />
 							</h:panelGrid>
 							<h:commandButton value="Add Activity" class="fa" action="#{activityBean.addActivity()}"></h:commandButton>

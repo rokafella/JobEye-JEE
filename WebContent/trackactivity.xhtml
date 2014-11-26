@@ -17,8 +17,23 @@
 						<a  href="addactivity.xhtml">Add More</a>
 						<h:form>					
 										<h:outputText value="#{activityBean.selectedCompany}" />					
-											
-							<h:outputText value="#{activityBean.test}" />					
+						<h:dataTable value="#{activityBean.activities}" var="x"
+								styleClass="order-table"
+								headerClass="order-table-header"								
+								rowClasses="order-table-odd-row,order-table-even-row">
+								<h:column>
+									<f:facet name="header">Company</f:facet>    				
+     								 #{x[0]}
+   								</h:column>
+								<h:column>
+									<f:facet name="header">Title</f:facet>
+      								#{x[1]}
+   								</h:column>
+								<h:column>
+									<f:facet name="header">Position</f:facet>
+									#{x[2]}
+   								</h:column>
+							</h:dataTable>						
 						</h:form>						
 					</div>
 				</div>

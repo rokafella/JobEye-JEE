@@ -64,6 +64,11 @@
 		<managed-bean-name>activityBean</managed-bean-name>
 		<managed-bean-class>com.jobeye.ActivityBean</managed-bean-class>
 		<managed-bean-scope>application</managed-bean-scope>
+		<managed-property>
+			<property-name>loginBean</property-name>
+			<property-class>com.jobeye.LoginBean</property-class>
+			<value>#{loginBean}</value>
+		</managed-property>
 	</managed-bean>
 
 	<navigation-rule>

@@ -44,13 +44,22 @@ public class ActivityBean
 	
 	@EJB
 	private ActivitySession activitySession;
+	@EJB
 	private CompanySession companySession;
+	
 	private LoginBean loginBean;
 	
+	public LoginBean getLoginBean() {
+		return loginBean;
+	}
+	public void setLoginBean(LoginBean loginBean) {
+		this.loginBean = loginBean;
+	}
 	public String addActivity()
 	{		
 		//int companyId = getCompanyIdFromName(company);
 		int companyId = companySession.getCompany(selectedCompany,loginBean.getUserId());
+		
 		int activityId = activitySession.AddActivity(title, date, description, companyId);
 		if(companyId == -1)
 			return "false";
@@ -75,21 +84,21 @@ public class ActivityBean
 		List<List<String>> temp = new ArrayList<>();
 		List<String> compIds = companySession.allCompanies(loginBean.getUserId());
 		setTest(String.valueOf(compIds.size()));
-//		for(String compid: compIds){	
-//			int cid = Integer.parseInt(compid);
-//			List<String> compli = new ArrayList<>();
+		for(String compid: compIds){	
+			//int cid = Integer.parseInt(compid);
+			List<String> compli = new ArrayList<>();
+			
+			//String company = companySession.getName(cid);
+			
+			//date title description
+			List<String> res1 = new ArrayList<>();
+			res1 = activitySession.findActivity(compid);
 //			
-//			String company = companySession.getName(cid);
-//			
-//			//date title description
-////			List<String> res1 = new ArrayList<>();
-////			res1 = activitySession.findActivity(cid);
-////			
-//			compli.add(company);
-////			compli.addAll(res1);
-//			
-//			temp.add(compli);
-//		}
+			//compli.add(company);
+			compli.addAll(res1);
+			
+			temp.add(compli);
+		}
 		return temp;
 	}
 	
