@@ -28,12 +28,11 @@
 								<h:inputText value="#{activityBean.title}" required="true" id="title" requiredMessage="title is required">
 								</h:inputText>
 								<h:message for="title" />
-								<h:outputText value="Company : "></h:outputText>
-								<h:inputText value="#{activityBean.company}" required="true" id="company" requiredMessage="company is required">
-								</h:inputText>
+								<h:outputText value="Select Company"></h:outputText>
+								<h:selectOneMenu style="margin-left:10px;margin-right:30px;" value="#{applicationBean.selectedCompany}"><f:selectItems value="#{applicationBean.allCompanies}"/></h:selectOneMenu>
 								<h:message for="title" />
 							</h:panelGrid>
-							<h:commandButton value="Add Task" class="fa" action="#{activityBean.addActivity()}"></h:commandButton>
+							<h:commandButton value="Add Activity" class="fa" action="#{activityBean.addActivity()}"></h:commandButton>
 						</h:form>
 					</div>
 				</div>

@@ -14,9 +14,10 @@
 				<div id="header" class="item" data-width="900">
 					<div class="inner">
 						<h1>My Applications</h1>
-						<br />
+						<a  href="addapplication.xhtml">Add More</a>
 						<h:form>
 							<h:panelGrid columns="3">
+							 
 								<h:selectOneMenu style="margin-right:30px;"
 									value="#{applicationBean.trackStatus}">
 									<f:selectItem itemValue="Open" itemLabel="Open" />
@@ -24,14 +25,13 @@
 								</h:selectOneMenu>
 								<h:commandButton value="Track Applications" class="fa"
 									action="#{applicationBean.trackApplications()}"></h:commandButton>
-								<h:outputText value="#{applicationBean.applications}" />
 							</h:panelGrid>
-							<h:dataTable styleClass="order-table"
-								headerClass="order-table-header"
-								value="#{applicationBean.applications}" var="x"
+							<h:dataTable value="#{applicationBean.applications}" var="x"
+								styleClass="order-table"
+								headerClass="order-table-header"								
 								rowClasses="order-table-odd-row,order-table-even-row">
 								<h:column>
-									<f:facet name="header">Comapny</f:facet>    				
+									<f:facet name="header">Company</f:facet>    				
      								 #{x[0]}
    								</h:column>
 								<h:column>
@@ -42,8 +42,8 @@
 									<f:facet name="header">Position</f:facet>
 									#{x[2]}
    								</h:column>
-							</h:dataTable>
-						</h:form>
+							</h:dataTable>							
+						</h:form>						
 					</div>
 				</div>
 			</div>

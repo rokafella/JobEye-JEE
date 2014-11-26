@@ -137,7 +137,7 @@ public class ApplicationBean
 
 	public List<List<String>> getApplications() {
 		
-		return applications;
+		return foo();
 	}
 
 	public void setApplications(List<List<String>> applications) {
@@ -156,27 +156,26 @@ public class ApplicationBean
 	
 	public String trackApplications(){
 		
-		List<Integer> jobIds = appSession.getAllApps(profileBean.getProfileId(),"Open");
-		
-		for(int jobid: jobIds){
-			//int companyID = jobSession.getCompanyId(jobid);
-//			String location = jobSession.getLocation(jobid);
-//			String position = jobSession.getPosition(jobid);
-//			String company = companySession.getName(companyID);
-			List<String> appli = jobSession.getApps(jobid);
-//			appli.add(company);
-//			appli.add(location);
-//			appli.add(position);
-			if(appli==null){
-				System.out.println("NONONONONON");
-			}
-			else{
-				applications.add(appli);
-				System.out.println("HHAAHAHAHA");
-			}
-			return "false";
-		}
-		
 		return "true";
 	}
+	
+	public List<List<String>> foo (){
+		List<List<String>> temp = new ArrayList<>();
+		List<Integer> jobIds = appSession.getAllApps(profileBean.getProfileId(),trackStatus);
+		
+		for(int jobid: jobIds){			
+			List<String> appli = new ArrayList<>();
+			int companyID = jobSession.getCompanyId(jobid);
+			String location = jobSession.getLocation(jobid);
+			String position = jobSession.getPosition(jobid);
+			String company = companySession.getName(companyID);
+//		//	List<String> appli = jobSession.getApps(jobid);
+			appli.add(company);
+			appli.add(location);
+			appli.add(position);
+			temp.add(appli);
+		}
+		return temp;
+	}
+	
 }
