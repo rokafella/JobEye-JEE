@@ -170,7 +170,7 @@ ul.contact li a:hover {
 
 .order-table-header {
 	text-align: center;
-	background: none repeat scroll 0 0 #E5E5E5;
+	background: none repeat scroll 0 0 #991313;
 	border-bottom: 1px solid #BBBBBB;
 	padding: 16px;
 }
@@ -183,6 +183,6 @@ ul.contact li a:hover {
 
 .order-table-even-row {
 	text-align: center;
-	background: none repeat scroll 0 0 #F9F9F9;
-	border-top: 1px solid #BBBBBB;
+	background: none repeat scroll 0 0 #000000;
+	border-top: 1px solid #000000;
 }
