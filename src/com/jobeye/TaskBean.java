@@ -99,7 +99,14 @@ public class TaskBean
 	}
 	
 	public List<List<String>> foo (){
-		return taskSession.getTasksforProfile(profileBean.getProfileId());
+		List<List<String>> tasks = taskSession.getTasksforProfile(profileBean.getProfileId());
+		for(int i =0 ; i<tasks.size(); i++)
+		{ //date, description, applicationid
+			int applicationId = Integer.parseInt(tasks.get(i).get(2));
+			String application = applicationSession.getdescriptionForid(applicationId);
+			tasks.get(i).set(2, application);
+		}
+		return tasks;
 	}
 	
 	
