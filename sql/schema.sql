@@ -15,7 +15,7 @@ create table Profile(profileId long, profileType varchar(50), userId long, prima
 create table Job(jobId integer, companyId integer, position varchar(50), Location varchar(50));
 create table Company(companyId integer, name varchar(50), headQuarters varchar(50), userId integer);
 create table Activity(activityId integer, description varchar(50), title varchar(50), date date, companyId integer);
-create table Application(applicationId integer, jobId integer, profileId integer, status varchar(50));
+create table Application(applicationId integer, jobId integer, profileId integer, status varchar(50) description (300));
 
 select * from activity;
 select * from application;

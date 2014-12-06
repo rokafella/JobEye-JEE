@@ -58,6 +58,11 @@
 			<property-class>com.jobeye.ApplicationBean</property-class>
 			<value>#{applicationBean}</value>
 		</managed-property>
+		<managed-property>
+			<property-name>loginBean</property-name>
+			<property-class>com.jobeye.LoginBean</property-class>
+			<value>#{loginBean}</value>
+		</managed-property>
 	</managed-bean>
 	
 	<managed-bean>

@@ -92,7 +92,7 @@ public class ApplicationBean
 		int jobId = jobSession.AddJob(companyId, location, position);
 		if(jobId == -1)
 			return "false";
-		int applicationId = appSession.AddApplication(jobId, profileBean.getProfileId(), status);
+		int applicationId = appSession.AddApplication(jobId, profileBean.getProfileId(), status, selectedCompany + "-" + location + "-" +  position);
 		setApplicationId(applicationId);
 		if(applicationId == -1)
 			return "false";
