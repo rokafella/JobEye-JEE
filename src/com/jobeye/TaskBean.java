@@ -38,7 +38,7 @@ public class TaskBean
 	
 	public ArrayList<String> getAllApplications() {
 		ArrayList<String> applicationsToBind = new ArrayList<String>();
-		List<com.jobeye.EJB.Entity.ApplicationEntity> applications = applicationSession.getAllApplicationsForTasks("open");
+		List<com.jobeye.EJB.Entity.ApplicationEntity> applications = applicationSession.getAllApplicationsForTasks("Open");
 		for(com.jobeye.EJB.Entity.ApplicationEntity s:applications)
 			applicationsToBind.add(s.getDescription());
 			
@@ -55,10 +55,28 @@ public class TaskBean
 		this.selectedApplication = selectedApplication;
 	}
 	
+	public List<List<String>> getTasks() {
+		return foo();
+	}
+	public void setTasks(List<List<String>> tasks) {
+		Tasks = tasks;
+	}
+	
+	public ProfileBean getProfileBean() {
+		return profileBean;
+	}
+	public void setProfileBean(ProfileBean profileBean) {
+		this.profileBean = profileBean;
+	}
+	
 	private Date date;
 	private String description;
 	private ApplicationBean applicationBean;
 	private LoginBean loginBean;
+	private ProfileBean profileBean;
+
+
+	private List<List<String>> Tasks;
 
 	private ArrayList<com.jobeye.EJB.Entity.ApplicationEntity> allApplications;
 	private String selectedApplication;
@@ -69,7 +87,7 @@ public class TaskBean
 	
 	@EJB
 	private com.jobeye.EJB.Service.ApplicationSession applicationSession;
-	
+		
 	public String addTask()
 	{
 		
@@ -79,5 +97,10 @@ public class TaskBean
 		
 		return "submit";
 	}
+	
+	public List<List<String>> foo (){
+		return taskSession.getTasksforProfile(profileBean.getProfileId());
+	}
+	
 	
 }
