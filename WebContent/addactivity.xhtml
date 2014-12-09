@@ -11,26 +11,27 @@
 		<div id="main">
 			<div id="reel">
 				<!-- Header Item -->
-				<div id="header" class="item" data-width="600" data-height = "500">
+				<div id="header" class="item" data-width="900" data-height = "500">
 					<div class="inner" style="margin-top:-30px;">
 						<h1>Add Activity</h1><br/>
 						<h:form>
 							<h:panelGrid columns="3">
-								<h:outputText value="Date : "></h:outputText>
-								<h:inputText value="#{activityBean.date}" required="true" id="date" requiredMessage="date is required">
-								<f:convertDateTime pattern="yyyy-MM-dd" /></h:inputText>
+								<h:outputText value="Date : " style="margin-right:10px;"></h:outputText>
+								<h:inputText value="#{activityBean.date}" required="true" id="date" requiredMessage="date is required" style="margin-right:10px;">
+								</h:inputText>
 								<h:message for="date" />
-								<h:outputText value="Description : "></h:outputText>
-								<h:inputText value="#{activityBean.description}" required="true" id="description" requiredMessage="description is required">
+								<h:outputText value="Description : " style="margin-right:10px;"></h:outputText>
+								<h:inputText value="#{activityBean.description}" style="margin-right:10px;" required="true" id="description" requiredMessage="description is required">
 								</h:inputText>
 								<h:message for="description" />
-								<h:outputText value="Title : "></h:outputText>
-								<h:inputText value="#{activityBean.title}" required="true" id="title" requiredMessage="title is required">
+								<h:outputText value="Title : " style="margin-right:10px;"></h:outputText>
+								<h:inputText value="#{activityBean.title}" style="margin-right:10px;" required="true" id="title" requiredMessage="title is required">
 								</h:inputText>
 								<h:message for="title" />
-								<h:outputText value="Select Company"></h:outputText>
-								<h:selectOneMenu style="margin-left:10px;margin-right:30px;" value="#{activityBean.selectedCompany}"><f:selectItems value="#{applicationBean.allCompanies}"/></h:selectOneMenu>
-								<h:message for="title" />
+								<h:outputText value="Company : " style="margin-right:10px;"></h:outputText>
+								<h:inputText value="#{activityBean.company}" style="margin-right:10px;" required="true" id="company" requiredMessage="company is required">
+								</h:inputText>
+								<h:message for="company" />
 							</h:panelGrid>
 							<h:commandButton value="Add Activity" class="fa" action="#{activityBean.addActivity()}"></h:commandButton>
 						</h:form>

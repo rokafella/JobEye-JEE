@@ -8,18 +8,24 @@
 
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
 	<ui:define name="main">
-		<div id="main" style="height:330px !important">
-			<div id="reel" style="height:330px !important">
+		<div id="main" style="height: 330px !important">
+			<div id="reel" style="height: 330px !important">
 				<!-- Header Item -->
-				<div id="header" class="item" data-width="900" style="height:330px !important">
+				<div id="header" class="item" data-width="900"
+					style="height: 330px !important">
 					<div class="inner">
 						<h1>Company Activities</h1>
-						<a  href="addactivity.xhtml">Add More</a>
-						<h:form>					
-										<!-- h:outputText value="#{activityBean.selectedCompany}" / -->					
-						<h:dataTable value="#{activityBean.activities}" var="x"
-								styleClass="order-table"
-								headerClass="order-table-header"								
+						<h:form>
+							<h:panelGrid columns="3">
+								<h:selectOneMenu style="margin-right:30px;"
+									value="#{activityTrackBean.selectedCompany}">
+									<f:selectItems value="#{activityTrackBean.allCompanies}" />
+								</h:selectOneMenu>
+								<h:commandButton value="Get Activity" class="fa"
+									action="#{activityTrackBean.trackActivities()}"></h:commandButton>
+							</h:panelGrid>
+							<h:dataTable value="#{activityTrackBean.activities}" var="x"
+								styleClass="order-table" headerClass="order-table-header"
 								rowClasses="order-table-odd-row,order-table-even-row">
 								<h:column>
 									<f:facet name="header">Company</f:facet>    				
@@ -30,11 +36,15 @@
       								#{x[1]}
    								</h:column>
 								<h:column>
-									<f:facet name="header">Position</f:facet>
+									<f:facet name="header">Date</f:facet>
 									#{x[2]}
    								</h:column>
-							</h:dataTable>						
-						</h:form>						
+								<h:column>
+									<f:facet name="header">Description</f:facet>
+									#{x[3]}
+   								</h:column>
+							</h:dataTable>
+						</h:form>
 					</div>
 				</div>
 			</div>

@@ -155,7 +155,6 @@ public class ApplicationBean
 	}
 	
 	public String trackApplications(){
-		
 		return "true";
 	}
 	
@@ -169,7 +168,6 @@ public class ApplicationBean
 			String location = jobSession.getLocation(jobid);
 			String position = jobSession.getPosition(jobid);
 			String company = companySession.getName(companyID);
-//		//	List<String> appli = jobSession.getApps(jobid);
 			appli.add(company);
 			appli.add(location);
 			appli.add(position);
